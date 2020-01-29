@@ -15,7 +15,7 @@ app.get("/*", (req, res) => {
 const formidable = require("formidable");
 app.post("/*", (req, res) => {
   var form = new formidable.IncomingForm();
-
+  console.log("cookies", req.cookies);
   form.parse(req, function(err, fields, files) {
     console.log("stringField", fields["stringField"]);
     console.log("files", Object.keys(files));
